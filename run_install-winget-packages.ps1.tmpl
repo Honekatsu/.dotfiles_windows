@@ -1,0 +1,71 @@
+{{ if eq .chezmoi.os "windows" }}
+# wingetパッケージのインストール
+$packages = @(
+  "Google.JapaneseIME",
+  "KeePassXCTeam.KeePassXC",
+  "Microsoft.PowerShell",
+  "Microsoft.VisualStudioCode",
+  "Obsidian.Obsidian",
+  
+  # Git
+  "Git.Git",
+  "GitHub.cli",
+  "JesseDuffield.lazygit",
+
+  # PC
+  "7zip.7zip",
+  "CPUID.HWMonitor",
+  "CrystalDewWorld.CrystalDiskInfo",
+  "CrystalDewWorld.CrystalDiskMark",
+  "eza-community.eza",
+  "FastCopy.FastCopy",
+  "junegunn.fzf",
+  "Microsoft.PowerToys",
+  "Microsoft.WindowsTerminal",
+  "sharkdp.bat",
+  "tailscale.tailscale",
+  "vim.vim",
+  "voidtools.Everything",
+  "wezterm.wezterm",
+  "WireGuard.WireGuard",
+  "sxyazi.yazi"
+
+  # Browsers
+  "Google.Chrome",
+  "Mozilla.Firefox",
+  "VivaldiTechnologies.Vivaldi",
+
+  # Mailer
+  "Mozilla.Thunderbird",
+
+  # Media
+  "MPC-BE.MPC-BE",
+  "SumatraPDF.SumatraPDF",
+  "VideoLAN.VLC"
+)
+
+foreach ($pkg in $packages) {
+  Write-Host "Installing $pkg ..."
+  winget install --id=$pkg --accept-package-agreements --accept-source-agreements -e
+}
+
+# Bunのインストール
+powershell -c "irm bun.sh/install.ps1|iex"
+
+# Bunでパッケージのインストール
+bun install -g czg
+
+# Scoopパッケージのインストール
+scoop bucket add extras
+scoop install lazygit
+scoop install zoxide
+
+# PowerShellの設定
+scoop install posh-git
+Add-PoshGitToProfile
+
+winget install JanDeDobbeleer.OhMyPosh -s winget
+
+oh-my-posh font install meslo
+
+{{ end }}

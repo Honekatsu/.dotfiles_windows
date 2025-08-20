@@ -1,0 +1,5 @@
+customCommands:
+  - command: czg
+    context: files
+    output: terminal
+    key: c
