@@ -18,6 +18,10 @@ winget install -h "twpayne.chezmoi"
 winget install -h "Git.Git"
 ```
 
+Nerd Fontsをインストールする
+
+<https://www.nerdfonts.com/font-downloads>
+
 ### 2. リポジトリをクローンする
 
 ```PowerShell

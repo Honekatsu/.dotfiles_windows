@@ -2,3 +2,8 @@
   type = "file"
   url  = "https://raw.githubusercontent.com/Honekatsu/.dotfiles/refs/heads/main/apps/.vimrc"
   refreshPeriod = "168h"
+
+[".config/starship.toml"]
+  type = "file"
+  url  = "https://raw.githubusercontent.com/Honekatsu/.dotfiles/refs/heads/main/apps/zsh/starship.toml"
+  refreshPeriod = "168h"

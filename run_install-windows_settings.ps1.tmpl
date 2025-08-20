@@ -25,6 +25,7 @@ $packages = @(
   "Microsoft.PowerToys",
   "Microsoft.WindowsTerminal",
   "sharkdp.bat",
+  "Starship.Starship",
   "tailscale.tailscale",
   "vim.vim",
   "voidtools.Everything",
@@ -63,17 +64,5 @@ scoop update *
 scoop bucket add extras
 scoop install lazygit
 scoop install zoxide
-
-# PowerShellの設定
-scoop install posh-git
-Add-PoshGitToProfile
-
-winget install JanDeDobbeleer.OhMyPosh -s winget
-
-# フォントをインストール(インストールされていない時だけ)
-$fonts = (Get-ChildItem "$env:LOCALAPPDATA\\Microsoft\\Windows\\Fonts" | Where-Object { $_.Name -like "*Meslo*" })
-if ($fonts.Count -eq 0) {
-  oh-my-posh font install meslo
-}
 
 {{ end }}
