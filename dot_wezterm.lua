@@ -7,9 +7,11 @@ config.automatically_reload_config = true
 
 config.window_background_opacity = 0.7
 
+config.font_size = 12.0
 config.font = wezterm.font_with_fallback {
-  -- ! Windows
-  "MesloLGL Nerd Font"
+  -- ! Windows 
+  "Bizin Gothic",
+  "Symbols Nerd Font Mono",
 }
 
 config.use_ime = true
