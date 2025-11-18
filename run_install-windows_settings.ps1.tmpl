@@ -65,4 +65,10 @@ scoop bucket add extras
 scoop install lazygit
 scoop install zoxide
 
+# uvのインストール
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+
+# uvパッケージのインストール
+uv tool install copier
+
 {{ end }}
