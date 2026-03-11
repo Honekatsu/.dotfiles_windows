@@ -1,6 +1,3 @@
-# Zoxide
-Invoke-Expression (& { (zoxide init powershell | Out-String) })
-
 # 補完
 Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
 
@@ -12,3 +9,7 @@ Set-Alias vim nvim
 
 # Starship
 Invoke-Expression (&starship init powershell)
+
+# Zoxide
+Invoke-Expression (& { (zoxide init powershell | Out-String) })
+
